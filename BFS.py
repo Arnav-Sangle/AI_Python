@@ -34,6 +34,6 @@ def bfs(visited, graph, node):  #function for bfs
                 queue.append(neighbour)
 
 #Driver code
-print("Following is the Depth-First-Search")
+print("Following is the Breadth-First-Search")
 srcNode = input("Enter source node: ")
 bfs(visited, graph, srcNode)
