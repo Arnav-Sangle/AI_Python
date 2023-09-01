@@ -39,7 +39,7 @@ visited = set() #set to keep track of visited nodes
 
 def dfs(visited, graph, node): #function for dfs
     if node not in visited:
-        print(node),        # , used to print on same line 
+        print(node),        # , used to print on same line, Doesn't work, use print("text" ,end = " ")
         print(graph[node])
         visited.add(node)
         for neighbour in graph[node]:
