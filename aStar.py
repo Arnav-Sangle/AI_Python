@@ -21,10 +21,12 @@ def aStarAlgo(start_node, stop_node):
         for v in open_set:
             if n==None or g[v]+heuristic(v) < g[n]+heuristic(n):    # Total f() = g() + h()     g() = cost start to current       h() = estimate cost current to end
                 n = v
+                print(n)
         if n==stop_node or Graph_nodes[n]==None:    # condn to stop, when end node is reached
             pass        # https://www.w3schools.com/python/ref_keyword_pass.asp
         else:
-            for (m, weight) in get_neighbours(n):       # (m, weight) are the data associated with key(n) in Graph_nodes
+            for (m, weight) in get_neighbours(n):       
+                # (m, weight) are the data associated with key(n) in Graph_nodes
                 # nodes 'm' not in first and last set are added to first
                 # n is set as its parent
                 if m not in open_set and m not in closed_set:
@@ -67,14 +69,13 @@ def aStarAlgo(start_node, stop_node):
         #   because all of his neighbours were inspected
         open_set.remove(n)
         closed_set.add(n)
-    
     print('Path does not exist!')
     return None
     
     
 # define function to return neighbour and its distance from the passed node
 def get_neighbours(v):
-    if v in Graph_nodes[v]:
+    if v in Graph_nodes:
         return Graph_nodes[v]
     else:
         return None
